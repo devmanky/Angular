@@ -1,0 +1,53 @@
+<form class="pro-form" #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
+  <input type="hidden" name="ProductID" #ProductID="ngModel" [(ngModel)]="productService.slectedProduct.ProductID">
+  <div class="class form-row">
+    <div class="class form -group col-md-2">
+     <input  class="form-control" name="Category" #Category="ngModel" [(ngModel)]="productService.slectedProduct.Category" placeholder="Category" required>
+      <div class="validation-error" *ngIf="Category.invalid && Category.touched">This Field is Required</div>
+    </div>
+    <div class="class form -group col-md-2">
+      <input  class="form-control" name="RangeBrand" #RangeBrand="ngModel" [(ngModel)]="productService.slectedProduct.RangeBrand" placeholder="RangeBrand" required>
+      <div class="validation-error" *ngIf="RangeBrand.invalid && RangeBrand.touched">This Field is Required</div>
+    </div>
+    <div class="class form -group col-md-1">
+      <input  class="form-control" name="Brand" #Brand="ngModel" [(ngModel)]="productService.slectedProduct.Brand" placeholder="Brand" required>
+      <div class="validation-error" *ngIf="Brand.invalid && Brand.touched">This Field is Required</div>
+    </div>
+    <div class="class form -group col-md-1">
+      <input type="number"   ng-model="TV" class="form-control" name="TV"  #TV="ngModel" (change)="handleChange(TV.value)" [(ngModel)]="productService.slectedProduct.TV" placeholder="TV" required>
+      <div class="validation-error" *ngIf="TV.invalid && TV.touched">This Field is Required</div>
+    </div>
+    <div class="class form -group col-md-1">
+      <input type="number"  ng-model="Print" class="form-control" name="Print" #Print="ngModel" (change)="handleChange(Print.value)" [(ngModel)]="productService.slectedProduct.Print" placeholder="Print" required>
+      <div class="validation-error" *ngIf="Print.invalid && Print.touched">This Field is Required</div>
+    </div>
+    <div class="class form -group col-md-1">
+      <input type="number"  ng-model="Radio" class="form-control" name="Radio" #Radio="ngModel" (change)="handleChange(Radio.value)" [(ngModel)]="productService.slectedProduct.Radio" placeholder="Radio" required>
+      <div class="validation-error" *ngIf="Radio.invalid && Radio.touched">This Field is Required</div>
+    </div>
+    <div class="class form -group col-md-1">
+      <input type="number"  ng-model="Digital" class="form-control" name="Digital" #Digital="ngModel" (change)="handleChange(Digital.value)" [(ngModel)]="productService.slectedProduct.Digital" placeholder="Digital" required>
+      <div class="validation-error" *ngIf="Digital.invalid && Digital.touched">This Field is Required</div>
+    </div>
+    <div class="class form -group col-md-1">
+      <input type="number"   ng-model="OOH"  class="form-control" name="OOH" #OOH="ngModel" (change)="handleChange(OOH.value)" [(ngModel)]="productService.slectedProduct.OOH" placeholder="OOH" required>
+      <div class="validation-error" *ngIf="OOH.invalid && OOH.touched">This Field is Required</div>
+    </div>
+    <div class="class form -group col-md-1">
+      <input type="number"  ng-model="BTL" class="form-control" name="BTL" #BTL="ngModel" (change)="handleChange(BTL.value)" [(ngModel)]="productService.slectedProduct.BTL" placeholder="BTL" required>
+      <div class="validation-error" *ngIf="BTL.invalid && BTL.touched">This Field is Required</div>
+    </div>
+    <div class="class form -group col-md-1">
+      <input type="hidden"  class="form-control" name="Total"  placeholder="Total"  #Total="ngModel" [(ngModel)]="productService.slectedProduct.Total" value ="{{sum}}">
+       </div> 
+   </div>
+   <br>
+    <div class="class form-row">
+    <div class="class form -group col-md-3">
+     <button [disabled]="!productForm.valid" type="submit" class="btn btn-lg btn-block btn-info">Submit</button>
+    </div>
+    <div class="class form -group col-md-3">
+      <button type="button" class="btn btn-lg btn-block btn-secondary" (click)="resetForm(productForm  )">Reset</button>
+     </div>
+    </div>
+</form>

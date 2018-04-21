@@ -1,0 +1,36 @@
+<table class="table table-lg table-hover">
+  <tr>
+      <th>Category</th>
+      <th>RangeBrand</th>
+      <th>Brand</th>
+      <th>TV</th>
+      <th>Print</th>
+      <th>Digital</th>
+      <th>Radio</th>
+      <th>OOH</th>
+      <th>BTL</th>
+      <th>Total</th>
+  </tr>
+  <tr *ngFor="let product of productService.productList">
+    <td>{{product.Category}}</td>
+    <td>{{product.RangeBrand}}</td>
+     <td>{{product.Brand}}</td> 
+     <td>{{product.TV}}</td>
+     <td>{{product.Print}}</td> 
+      <td>{{product.Digital}}</td>
+      <td>{{product.Radio}}</td>
+      <td>{{product.OOH}}</td>
+      <td>{{product.BTL}}</td>
+      <td>{{product.Total}}</td>
+      <td>
+        <a class="btn" (click)="showForEdit(product)">
+            <i class="fa fa-pencil-square-o"></i>
+        </a>
+          <a class="btn text-danger" (click)="onDelete(product.ProductID)">
+              <i class="fa fa-trash-o"></i>
+         </a>
+      </td>
+  </tr>
+  </table>
+
+ 
